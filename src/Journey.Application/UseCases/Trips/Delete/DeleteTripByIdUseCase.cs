@@ -3,7 +3,7 @@ using Journey.Exception.ExceptionsBase;
 using Journey.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 
-namespace Journey.Application.UseCases.Delete
+namespace Journey.Application.UseCases.Trips.Delete
 {
     public class DeleteTripByIdUseCase
     {
@@ -16,7 +16,7 @@ namespace Journey.Application.UseCases.Delete
                 .Include(x => x.Activities)
                 .FirstOrDefault(x => x.Id == id);
 
-            if(trip is null)
+            if (trip is null)
             {
                 throw new NotFoundException(ResourceErrorMessages.TRIP_NOT_FOUND);
             }

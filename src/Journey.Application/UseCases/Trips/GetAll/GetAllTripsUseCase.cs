@@ -1,7 +1,7 @@
 ﻿using Journey.Communication.Responses;
 using Journey.Infrastructure;
 
-namespace Journey.Application.UseCases.GetAll
+namespace Journey.Application.UseCases.Trips.GetAll
 {
     public class GetAllTripsUseCase
     {
@@ -13,13 +13,13 @@ namespace Journey.Application.UseCases.GetAll
 
             return new ResponseTripsJson
             {
-                 Trips = trips.Select(trip => new ResponseShortTripJson
-                 {
-                     Id = trip.Id,
-                     EndDate = trip.EndDate,
-                     StartDate = trip.StartDate,
-                     Name = trip.Name
-                 }).ToList()
+                Trips = trips.Select(trip => new ResponseShortTripJson
+                {
+                    Id = trip.Id,
+                    EndDate = trip.EndDate,
+                    StartDate = trip.StartDate,
+                    Name = trip.Name
+                }).ToList()
             };
         }
     }
